@@ -1,0 +1,5 @@
+# Store binary research data with Git LFS. / 使用 Git LFS 管理二进制科研数据。
+dataset/**/*.png filter=lfs diff=lfs merge=lfs -text
+dataset/**/*.xlsx filter=lfs diff=lfs merge=lfs -text
+dataset/*.png filter=lfs diff=lfs merge=lfs -text
+dataset/*.xlsx filter=lfs diff=lfs merge=lfs -text

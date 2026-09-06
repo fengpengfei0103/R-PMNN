@@ -1,0 +1,21 @@
+# Python / Python 缓存
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE / 编辑器
+.idea/
+.vscode/
+
+# Generated experiment artifacts / 实验生成产物
+code/checkpoints/
+code/logs/
+code/results/
+code/*训练过程图像/
+code/configs/*.json
+!code/configs/full_template.json
+
+# Temporary files / 临时文件
+*.tmp
+~$*.xlsx

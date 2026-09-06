@@ -587,14 +587,6 @@ python code/audit_dataset.py --output dataset_audit.json
 
 </details>
 
-<details>
-<summary><strong>5. 为什么不提交 checkpoints 和 results？</strong></summary>
-
-它们是可由源码、配置和数据重新生成的产物，体积较大且会频繁变化。源码仓库保持精简，
-预训练权重可通过 Release 独立发布。
-
-</details>
-
 ## 相关文档
 
 - [`code/README.md`](code/README.md)：代码入口与命令速查；

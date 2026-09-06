@@ -1,0 +1,9 @@
+torch>=2.1
+torchvision>=0.16
+numpy>=1.24
+pandas>=2.0
+Pillow>=10.0
+matplotlib>=3.7
+torchmetrics>=1.2
+einops>=0.7
+openpyxl>=3.1

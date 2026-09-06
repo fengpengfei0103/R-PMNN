@@ -1,0 +1,82 @@
+{
+  "action": "train,predict",
+  "model_types": [
+    "r_pmnn"
+  ],
+  "checkpoint_prefix": "R_PMNN_full",
+  "seed": 60,
+  "feature_columns": [
+    "INITIAL_WATER_LEVEL",
+    "DIRECTION",
+    "RATE",
+    "DURATION",
+    "SIGNED_RATE",
+    "DELTA_WATER_LEVEL",
+    "FINAL_WATER_LEVEL"
+  ],
+  "column_aliases": {
+    "DURATION": "TIME"
+  },
+  "label_column": "StabilizationFactorIndex",
+  "name_column": "name",
+  "numeric_output_mode": "legacy_fr_index",
+  "stability_loss_weight": 1.0,
+  "image_loss_weights": {
+    "saturation": 1.0,
+    "pore_pressure": 1.5,
+    "effective_stress": 2.8
+  },
+  "gradient_loss_weight": 0.2,
+  "tv_loss_weight": 0.05,
+  "soil_mask_path": "../dataset/mask.png",
+  "physics_warmup_epochs": 20,
+  "delta_physics_loss_weight": 0.05,
+  "pore_diffusion_loss_weight": 0.0001,
+  "pore_diffusivity": 0.01,
+  "field_branch_skip_enabled": true,
+  "field_residual_enabled": true,
+  "pore_residual_scale": 0.25,
+  "stress_residual_scale": 0.25,
+  "feature_normalization": {
+    "enabled": true,
+    "stats_path": "model_snapshot/reservoir_feature_stats.json"
+  },
+  "label_normalization": {
+    "enabled": false,
+    "stats_path": "model_snapshot/reservoir_label_stats.json"
+  },
+  "name_replacements": {
+    "x3": [["S_", "P_"]],
+    "x4": [["S_", "E_"]],
+    "y2": [["S_", "P_"]],
+    "y3": [["S_", "E_"]]
+  },
+  "train": {
+    "metadata_file": "../dataset/H15-JS5-T2-50.xlsx",
+    "sheet_name": "Sheet2",
+    "image_root": "../dataset",
+    "image_dirs": {
+      "x1": "SaturabilityTraincopy",
+      "x3": "PorePressureTraincopy",
+      "x4": "EffectiveStressTraincopy",
+      "y1": "Saturabilitycopy",
+      "y2": "PorePressurecopy",
+      "y3": "EffectiveStresscopy"
+    },
+    "model_save_dir": "model_snapshot",
+    "batch_size": 4,
+    "epochs": 100,
+    "lr": 0.001
+  },
+  "predict": {
+    "metadata_file": "../dataset/testfull/H15-JS5-T4-40.xlsx",
+    "sheet_name": "Sheet2",
+    "image_root": "../dataset/testfull",
+    "output_dir": "ReservoirUnifiedResults-testfull",
+    "batch_size": 1,
+    "save_sample_metrics": true,
+    "save_explainability_outputs": true,
+    "pore_delta_visual_limit": 0.25,
+    "stress_delta_visual_limit": 0.25
+  }
+}

@@ -227,38 +227,9 @@ S_ → E_    # 有效应力 / Effective stress
 - CPU 也可运行，但完整训练和全量预测耗时会明显增加；
 - 建议为训练结果和临时图像预留充足磁盘空间。
 
-### 1. 克隆项目
-
-本项目的数据文件由 Git LFS 管理，克隆前请先安装
-[Git LFS](https://git-lfs.com/)。
+### 安装依赖
 
 ```bash
-git lfs install
-git clone <repository-url>
-cd <repository-directory>
-git lfs pull
-```
-
-### 2. 创建虚拟环境
-
-Windows PowerShell：
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-Linux / macOS：
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-### 3. 安装依赖
-
-```bash
-python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 

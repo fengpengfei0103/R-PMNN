@@ -20,7 +20,7 @@
   "label_column": "StabilizationFactorIndex",
   "name_column": "name",
   "numeric_output_mode": "legacy_fr_index",
-  "stability_loss_weight": 1.0,
+  "stability_loss_weight": 2.0,
   "image_loss_weights": {
     "saturation": 1.0,
     "pore_pressure": 1.5,

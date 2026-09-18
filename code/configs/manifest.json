@@ -1,0 +1,36 @@
+{
+  "source_config": "code\\configs\\full_template.json",
+  "case_order": [
+    "base",
+    "base_m",
+    "wo_l",
+    "full",
+    "wo_m",
+    "wo_s"
+  ],
+  "removal_order": [
+    "full",
+    "wo_m",
+    "wo_s",
+    "wo_l"
+  ],
+  "incremental_order": [
+    "base",
+    "base_m",
+    "wo_l",
+    "full"
+  ],
+  "cases": {
+    "full": {
+      "display_name": "Full",
+      "mechanism_features": true,
+      "physical_structure": true,
+      "weak_physics_loss": true,
+      "config": "code\\configs\\full.json",
+      "checkpoint": "code\\checkpoints\\full\\R_PMNN_full_epoch_100.pth",
+      "output_dir": "code\\results\\full",
+      "removal_role": "Full",
+      "incremental_role": "Full"
+    }
+  }
+}
